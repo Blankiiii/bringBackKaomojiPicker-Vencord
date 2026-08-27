@@ -11,7 +11,7 @@ See the [Vencord docs for installing custom plugins](https://docs.vencord.dev/in
 cd (directory)
 git pull https://github.com/Vendicated/Vencord.git
 
-(drag and drop the src folder with all its contents in the pulled repo folder)
+(download this repo, then drag and drop the src folder with all its contents in the pulled Vencord repository folder)
 
 pnpm build
 pnpm inject

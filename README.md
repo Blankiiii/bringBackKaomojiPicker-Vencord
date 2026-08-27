@@ -1,22 +1,18 @@
-# bringBackKaomojiPicker-Vencord
+# bringBackKaomojiPicker
 
-A Vencord user plugin that brings back the kaomoji picker.
+Readds the removed Kaomoji Picker Experiment
 
-## Features
+![Kaomoji Picker](https://github.com/user-attachments/assets/3a40c388-bb71-4444-9a50-fc6ce1b6de40)
+)
 
-* Easily access and insert kaomojis directly in Discord.
-* Automatically gets any kaomojis from this repo
-
-## Installation
-
-1. Clone the Vencord Repo and download this repository then just drag n' drop it into your Vencord folder:
-```bash
-src/userplugins/bringBackKaomojiPicker
-
-```
-
-2. Build and inject your Vencord client.
+# Installation
+See the [Vencord docs for installing custom plugins](https://docs.vencord.dev/installing/custom-plugins/) or
 ```cmd
+cd (directory)
+git pull https://github.com/Vendicated/Vencord.git
+
+(drag and drop the src folder with all its contents in the pulled repo folder)
+
 pnpm build
 pnpm inject
 ```

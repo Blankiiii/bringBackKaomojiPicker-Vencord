@@ -101,8 +101,7 @@
     {"name": "heated", "kaomoji": "(°ㅂ°╬)"},
     {"name": "furious_glare", "kaomoji": "(▼へ▼メ)"},
     {"name": "grumble", "kaomoji": "(￣へ￣)"},
-    {"name": "annoyed_face", "kaomoji": "(¬д¬。)"},
-    {"name": "rage_mode", "kaomoji": "(╬ﾟдﾟ)"}
+    {"name": "annoyed_face", "kaomoji": "(¬д¬。)"}
   ],
   "surprised": [
     {"name": "shocked", "kaomoji": "(⊙_⊙)"},

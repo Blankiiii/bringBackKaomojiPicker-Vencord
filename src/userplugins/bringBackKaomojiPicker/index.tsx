@@ -136,7 +136,7 @@ function KaomojiPanel() {
     }, []);
 
     if (!kaomojis) {
-        return <div style={{ padding: "16px", color: "var(--text-muted)" }}>Loading kaomojis...</div>;
+        return <div style={{ padding: "16px", color: "var(--text-muted)" }}>Kaomojis couldnt load, close Expression picker and reopen!</div>;
     }
 
     const categories = Object.entries(kaomojis)

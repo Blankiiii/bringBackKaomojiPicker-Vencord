@@ -2,7 +2,8 @@
 
 Readds the removed Kaomoji Picker Experiment
 
-![Kaomoji Picker](https://github.com/user-attachments/assets/3a40c388-bb71-4444-9a50-fc6ce1b6de40)
+<img width="502" height="491" alt="image" src="https://github.com/user-attachments/assets/2d3a8ae5-fc34-45ac-b0e5-4ac8ec2ab224" />
+
 
 # Installation
 See the [Vencord docs for installing custom plugins](https://docs.vencord.dev/installing/custom-plugins/) or

@@ -10,7 +10,7 @@ import { Flex } from "@components/Flex";
 import { Grid } from "@components/Grid";
 import { Paragraph } from "@components/Paragraph";
 import { IconComponent } from "@utils/types";
-import { ComponentDispatch, React, ScrollerThin, TextInput, useMemo, useState } from "@webpack/common";
+import { ComponentDispatch, ExpressionPickerStore, React, ScrollerThin, TextInput, useMemo, useState } from "@webpack/common";
 
 import kaomojiData from "./kaomojis.json";
 import { KaomojiCategories, KaomojiItem } from "./types";
@@ -99,6 +99,7 @@ export function KaomojiPicker({
 
     const handleSelect = (kaomoji: string) => {
         insertKaomoji(kaomoji);
+        ExpressionPickerStore.closeExpressionPicker();
         onSelect?.(kaomoji);
     };
 

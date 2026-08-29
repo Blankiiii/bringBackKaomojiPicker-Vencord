@@ -14,7 +14,7 @@ import { IconComponent } from "@utils/types";
 import { ComponentDispatch, ExpressionPickerStore, React, ScrollerThin, TextInput, useMemo, useState } from "@webpack/common";
 
 import kaomojiData from "./kaomojis.json";
-import { ExpressionPickerView, KaomojiCategories, KaomojiItem } from "./types";
+import { ExpressionPickerView, KaomojiCategories } from "./types";
 
 export function insertKaomoji(text: string) {
     ComponentDispatch.dispatch("INSERT_TEXT", {
@@ -74,25 +74,13 @@ export function KaomojiPicker({
 
     const filtered = useMemo(() => {
         const query = search.toLowerCase().trim();
-        const data = kaomojiData as KaomojiCategories;
-
-        const items: { category: string; item: KaomojiItem; }[] = [];
-
-        Object.entries(data).forEach(([category, list]) => {
-            if (activeCategory !== "all" && activeCategory !== category) return;
-
-            list.forEach(item => {
-                if (
-                    !query ||
-                    item.name.toLowerCase().includes(query) ||
-                    item.kaomoji.includes(query)
-                ) {
-                    items.push({ category, item });
-                }
-            });
-        });
-
-        return items;
+        return Object.entries(kaomojiData as KaomojiCategories).flatMap(([category, list]) =>
+            (activeCategory === "all" || activeCategory === category)
+                ? list
+                    .filter(item => !query || item.name.toLowerCase().includes(query) || item.kaomoji.includes(query))
+                    .map(item => ({ category, item }))
+                : []
+        );
     }, [search, activeCategory]);
 
     const scrollerRef = React.useRef<any>(null);

@@ -34,10 +34,10 @@ export const KaomojiIcon: IconComponent = ({
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className={className}
-        style={{ transform: "scale(0.6)" }}
+        style={{ transform: "scale(1.2)" }}
         fill="var(--icon-default)"
         stroke="currentColor"
-        strokeWidth="1"
+        strokeWidth="0.6"
         strokeLinecap="round"
         strokeLinejoin="round"
     >

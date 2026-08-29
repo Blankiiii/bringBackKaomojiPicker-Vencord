@@ -8,7 +8,7 @@ import definePlugin from "@utils/types";
 import { React } from "@webpack/common";
 import { ComponentType } from "react";
 
-import { KaomojiPicker } from "./components";
+import { KaomojiIcon, KaomojiPicker, KaomojiPickerButton } from "./components";
 import { ExpressionPickerTabProps, ExpressionPickerView } from "./types";
 
 export default definePlugin({
@@ -34,11 +34,10 @@ export default definePlugin({
         },
     ],
     tags: ["Chat", "Utility"],
-    // TODO: One day i will fix this for now this shit just wont work :sob:
-    // chatBarButton: {
-    //     icon: KaomojiIcon,
-    //     render: KaomojiPickerButton,
-    // },
+    chatBarButton: {
+        icon: KaomojiIcon,
+        render: KaomojiPickerButton,
+    },
     renderTabs(
         Tab: ComponentType<ExpressionPickerTabProps>,
         activeView: ExpressionPickerView,

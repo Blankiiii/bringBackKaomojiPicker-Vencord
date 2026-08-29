@@ -11,7 +11,8 @@ import { Grid } from "@components/Grid";
 import { Paragraph } from "@components/Paragraph";
 import { getCurrentChannel } from "@utils/discord";
 import { IconComponent } from "@utils/types";
-import { ComponentDispatch, ExpressionPickerStore, React, ScrollerThin, TextInput, useMemo, useState } from "@webpack/common";
+import { ScrollerBaseRef } from "@vencord/discord-types";
+import { ComponentDispatch, ExpressionPickerStore, React, ScrollerThin, TextInput, useEffect, useMemo, useRef, useState } from "@webpack/common";
 
 import kaomojiData from "./kaomojis.json";
 import { ExpressionPickerView, KaomojiCategories } from "./types";
@@ -72,6 +73,7 @@ export function KaomojiPicker({
         return Object.keys(kaomojiData as KaomojiCategories);
     }, []);
 
+    // works, but it's a little harder to read than it needs to be, comparing to the earlier logic
     const filtered = useMemo(() => {
         const query = search.toLowerCase().trim();
         return Object.entries(kaomojiData as KaomojiCategories).flatMap(([category, list]) =>
@@ -83,12 +85,10 @@ export function KaomojiPicker({
         );
     }, [search, activeCategory]);
 
-    const scrollerRef = React.useRef<any>(null);
-    React.useEffect(() => {
-        const scrollerNode = scrollerRef.current?.getScrollerNode?.();
-        if (scrollerNode) {
-            scrollerNode.scrollTop = 0;
-        }
+    const scrollerRef = useRef<ScrollerBaseRef>(null);
+
+    useEffect(() => {
+        scrollerRef.current?.scrollToTop();
     }, [filtered]);
 
     const handleSelect = (kaomoji: string) => {
